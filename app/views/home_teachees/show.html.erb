@@ -1,0 +1,5 @@
+<button><%= link_to 'Dashboard', root_path %></button>
+<h1><%= @home_teachee.name %></h1>
+<h3>Address:</h3>
+<p><%= @home_teachee.contact_info.address.street_number %></p>
+<p><%= @home_teachee.contact_info.address.city + ', ' + @home_teachee.contact_info.address.state + ' ' + @home_teachee.contact_info.address.zipcode %></p>

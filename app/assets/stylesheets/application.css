@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.ht_index_box {
+  border: 1px solid black;
+}

@@ -1,0 +1,8 @@
+<h1>Here are the home teachees for you: </h1>
+<% @home_teachees.each do |ht| %>
+  <div class='ht_index_box'>
+    <p>Name: <%= link_to ht.name, home_teachee_path(ht) %></p>
+    <p>Address: <%= ht.contact_info.address.street_number %></p>
+    <p>Phone: <%= ht.contact_info.phone1 %></p>
+  </div>
+<% end %>
