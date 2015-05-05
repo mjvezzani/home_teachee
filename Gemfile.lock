@@ -204,6 +204,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy (~> 2.3.0)
+  pry
   rails (= 4.1.8)
   rb-fsevent
   rspec-rails (~> 2.14.0)

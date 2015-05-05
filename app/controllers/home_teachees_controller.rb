@@ -7,7 +7,8 @@ class HomeTeacheesController < ApplicationController
   end
 
   def show
-
+    @address = Address.find(params[:id])
+    @histories = @home_teachee.histories.order('created_at DESC').limit(5)
   end
 
   def new

@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417013438) do
+ActiveRecord::Schema.define(version: 20150423171456) do
 
   create_table "addresses", force: true do |t|
     t.string   "street_number"
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
-    t.integer  "contact_info_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "home_teachee_id"
   end
 
-  add_index "addresses", ["contact_info_id"], name: "index_addresses_on_contact_info_id"
+  add_index "addresses", ["home_teachee_id"], name: "index_addresses_on_home_teachee_id"
 
   create_table "contact_infos", force: true do |t|
     t.string   "email"

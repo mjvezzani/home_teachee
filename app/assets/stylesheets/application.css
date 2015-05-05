@@ -16,4 +16,37 @@
 
 .ht_index_box {
   border: 1px solid black;
+  float: left;
+  padding: 25px;
+  right-margin: 15px;
+}
+
+.issue_count {
+  border: 1px solid black;
+  background-color: red;
+  color: yellow;
+  position: relative;
+  right: 5px;
+  top: -135px;
+  float: right;
+}
+
+.phone_numbers {
+  margin-left: 25px;
+}
+
+.email {
+  margin-left: 25px;
+}
+
+.address {
+  margin-left: 25px;
+}
+
+.history {
+  margin-left: 25px;
+}
+
+.issue {
+  margin-left: 25px;
 }

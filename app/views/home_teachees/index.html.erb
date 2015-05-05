@@ -2,7 +2,10 @@
 <% @home_teachees.each do |ht| %>
   <div class='ht_index_box'>
     <p>Name: <%= link_to ht.name, home_teachee_path(ht) %></p>
-    <p>Address: <%= ht.contact_info.address.street_number %></p>
-    <p>Phone: <%= ht.contact_info.phone1 %></p>
+    <p>Address: <%= ht.street_number %></p>
+    <p>Phone: <%= ht.phone1 %></p>
+    <div class='issue_count'>
+      <%= link_to ht.issues.count, home_teachee_path(ht) %>
+    </div>
   </div>
 <% end %>
