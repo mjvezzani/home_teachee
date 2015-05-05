@@ -1,42 +1,63 @@
-<%= form_for @home_teachee do |f| %>
-  <p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </p>
+<%= form_for @home_teachee, :html => {:class => 'form-horizontal'} do |f| %>
+  <div class='form-group'>
+    <%= f.label :first_name, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+    <div class='col-sm-4'>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <%= f.label :last_name, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+    <div class='col-sm-4'>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+  </div>
   <%= f.fields_for :contact_info do |ci| %>
-    <p>
-      <%= ci.label :email %>
-      <%= ci.text_field :email %>
-    </p>
-    <p>
-      <%= ci.label :phone1 %>
-      <%= ci.text_field :phone1 %>
-    </p>
-    <p>
-      <%= ci.label :phone2 %>
-      <%= ci.text_field :phone2 %>
-    </p>
+    <div class='form-group'>
+      <%= ci.label :email, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ci.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= ci.label :phone1, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ci.text_field :phone1, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= ci.label :phone2, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ci.text_field :phone2, class: 'form-control' %>
+      </div>
+    </div>
   <% end %>
   <%= f.fields_for :address do |ad| %>
-    <p>
-      <%= ad.label :street_number %>
-      <%= ad.text_field :street_number %>
-    </p>
-    <p>
-      <%= ad.label :city %>
-      <%= ad.text_field :city %>
-    </p>
-    <p>
-      <%= ad.label :state %>
-      <%= ad.text_field :state %>
-    </p>
-    <p>
-      <%= ad.label :zipcode %>
-      <%= ad.text_field :zipcode %>
-    </p>
+    <div class='form-group'>
+      <%= ad.label :street_number, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ad.text_field :street_number, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= ad.label :city, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ad.text_field :city, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= ad.label :state, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ad.text_field :state, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='form-group'>
+      <%= ad.label :zipcode, class: 'col-sm-2 col-sm-offset-2 control-label' %>
+      <div class='col-sm-4'>
+        <%= ad.text_field :zipcode, class: 'form-control' %>
+      </div>
+    </div>
   <% end %>
+  <div class='col-sm-5 col-sm-offset-3'>
+    <%= f.submit 'Submit', class: 'form-control btn btn-success' %>
+  </div>
 <% end %>
