@@ -1,9 +1,12 @@
 class HomeTeachee < ActiveRecord::Base
 
-  has_one :contact_info
-  has_one :address
-  has_many :histories
-  has_many :issues
+  has_one :contact_info, :dependent => :destroy
+  has_one :address, :dependent => :destroy
+  has_many :histories, :dependent => :destroy
+  has_many :issues, :dependent => :destroy
+
+  accepts_nested_attributes_for :contact_info
+  accepts_nested_attributes_for :address
 
   validates :first_name, presence: true
   validates :last_name, presence: true

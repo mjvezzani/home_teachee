@@ -1,0 +1,42 @@
+<%= form_for @home_teachee do |f| %>
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+  <%= f.fields_for :contact_info do |ci| %>
+    <p>
+      <%= ci.label :email %>
+      <%= ci.text_field :email %>
+    </p>
+    <p>
+      <%= ci.label :phone1 %>
+      <%= ci.text_field :phone1 %>
+    </p>
+    <p>
+      <%= ci.label :phone2 %>
+      <%= ci.text_field :phone2 %>
+    </p>
+  <% end %>
+  <%= f.fields_for :address do |ad| %>
+    <p>
+      <%= ad.label :street_number %>
+      <%= ad.text_field :street_number %>
+    </p>
+    <p>
+      <%= ad.label :city %>
+      <%= ad.text_field :city %>
+    </p>
+    <p>
+      <%= ad.label :state %>
+      <%= ad.text_field :state %>
+    </p>
+    <p>
+      <%= ad.label :zipcode %>
+      <%= ad.text_field :zipcode %>
+    </p>
+  <% end %>
+<% end %>

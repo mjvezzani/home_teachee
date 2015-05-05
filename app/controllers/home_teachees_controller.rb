@@ -13,6 +13,8 @@ class HomeTeacheesController < ApplicationController
 
   def new
     @home_teachee = HomeTeachee.new
+    @home_teachee.build_contact_info
+    @home_teachee.build_address
   end
 
   def create
@@ -48,7 +50,9 @@ class HomeTeacheesController < ApplicationController
   private
 
   def home_teachee_params
-    params.require(:home_teachee).permit(:first_name, :last_name)
+    params.require(:home_teachee).permit(:first_name, :last_name,
+                                         address_attributes: [:street_number, :city, :state, :zipcode],
+                                         contact_info_attributes: [:email, :phone1, :phone2])
   end
 
   def set_home_teachee
