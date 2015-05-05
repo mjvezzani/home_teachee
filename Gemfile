@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.3.4'
+
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.2.1'
   gem 'rspec-rails', '~>2.14.0'

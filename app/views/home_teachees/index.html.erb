@@ -1,11 +1,21 @@
 <h1>Here are the home teachees for you: </h1>
-<% @home_teachees.each do |ht| %>
-  <div class='ht_index_box'>
-    <p>Name: <%= link_to ht.name, home_teachee_path(ht) %></p>
-    <p>Address: <%= ht.street_number %></p>
-    <p>Phone: <%= ht.phone1 %></p>
-    <div class='issue_count'>
-      <%= link_to ht.issues.count, home_teachee_path(ht) %>
+<div class='row'>
+  <% @home_teachees.each do |ht| %>
+    <div class='col-md-3'>
+      <div class='ht_index_box'>
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            Name: <%= link_to ht.name, home_teachee_path(ht) %>
+          </div>
+          <div class='panel-body'>
+            <p>Address: <%= ht.street_number %></p>
+            <p>Phone: <%= ht.phone1 %></p>
+            <div class='issue_count'>
+              <%= link_to ht.issues.count, home_teachee_path(ht) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

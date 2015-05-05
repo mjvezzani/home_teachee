@@ -1,37 +1,53 @@
 <button><%= link_to 'Dashboard', root_path %></button>
 <h1><%= @home_teachee.name %></h1>
-<h3>Contact Information:</h3>
+<div class='row'>
+  <div class='col-md-3'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'>Contact Information:</div>
+      <div class='panel-body'>
+        <h4>Phone Number(s):</h4>
+        <div class='phone_numbers'>
+          <p>Primary Phone: <%= @home_teachee.phone1 %></p>
+          <p>Secondary Phone: <%= @home_teachee.second_phone %>
+        </div>
 
-<h4>Phone Number(s):</h4>
-<div class='phone_numbers'>
-  <p>Primary Phone: <%= @home_teachee.phone1 %></p>
-  <p>Secondary Phone: <%= @home_teachee.second_phone %>
+        <h4>Email:</h4>
+        <div class='email'>
+          <p><%= @home_teachee.email %></p>
+        </div>
+
+        <h4>Address:</h4>
+        <div class='address'>
+          <%= @address.formatted_address %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-9'>
+    <div class='row'>
+      <h4>History</h4>
+      <div class='history'>
+        <% @histories.each do |history| %>
+          <p>Date: <%= history.created_at.strftime("%a, %b %e %Y") %></p>
+          <p>Visit Summary: <%= history.visit_summary %>
+        <% end %>
+      </div>
+    </div>
+    <div class='row'>
+      <h4>Issues</h4>
+      <div class='issue'>
+        <dl>
+          <% @home_teachee.issues.each do |issue| %>
+            <dt><%= issue.title %></dt>
+            <dd><%= issue.description %></dd>
+          <% end %>
+        </dl>
+      </div>
+    </div>
+  </div>
 </div>
 
-<h4>Email:</h4>
-<div class='email'>
-  <p><%= @home_teachee.email %></p>
-</div>
 
-<h4>Address:</h4>
-<div class='address'>
-  <%= @address.formatted_address %>
-</div>
 
-<h4>History</h4>
-<div class='history'>
-  <% @histories.each do |history| %>
-    <p>Date: <%= history.created_at.strftime("%a, %b %e %Y") %></p>
-    <p>Visit Summary: <%= history.visit_summary %>
-  <% end %>
-</div>
 
-<h4>Issues</h4>
-<div class='issue'>
-  <dl>
-    <% @home_teachee.issues.each do |issue| %>
-      <dt><%= issue.title %></dt>
-      <dd><%= issue.description %></dd>
-    <% end %>
-  </dl>
-</div>
+
