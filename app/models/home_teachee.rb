@@ -21,4 +21,8 @@ class HomeTeachee < ActiveRecord::Base
     [first_name, last_name].join(' ')
   end
 
+  def number_of_issues
+    issues.count
+  end
+
 end

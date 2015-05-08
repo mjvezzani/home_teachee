@@ -3,12 +3,10 @@ class HomeTeacheesController < ApplicationController
   before_action :set_home_teachee, only: [:show, :edit, :update, :destroy]
 
   def index
-    @home_teachees = HomeTeachee.all
+    @home_teachees = HomeTeachee.includes(:address, :contact_info, :issues).all
   end
 
   def show
-    @address = Address.find(params[:id])
-    @histories = @home_teachee.histories.order('created_at DESC').limit(5)
   end
 
   def new

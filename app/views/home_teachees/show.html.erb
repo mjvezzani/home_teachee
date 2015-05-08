@@ -18,7 +18,7 @@
 
         <h4>Address:</h4>
         <div class='address'>
-          <%= @address.formatted_address %>
+          <%= @home_teachee.address.formatted_address %>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class='row'>
       <h4>History</h4>
       <div class='history'>
-        <% @histories.each do |history| %>
+        <% @home_teachee.histories.each do |history| %>
           <p>Date: <%= history.created_at.strftime("%a, %b %e %Y") %></p>
           <p>Visit Summary: <%= history.visit_summary %>
         <% end %>
