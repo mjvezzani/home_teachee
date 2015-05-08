@@ -15,6 +15,7 @@
                 <%= link_to ht.number_of_issues, home_teachee_path(ht) %>
               </div>
             </div>
+            <%= button_to 'Remove Home Teachee', home_teachee_path(ht), method: :delete, data: {confirm: "Are you sure you wish to delete #{ht.name} from your list?"}, class: 'btn btn-success' %>
           </div>
         </div>
       </div>

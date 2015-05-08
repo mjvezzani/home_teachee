@@ -42,7 +42,8 @@ class HomeTeacheesController < ApplicationController
   end
 
   def destroy
-
+    @home_teachee.destroy
+    redirect_to root_path
   end
 
   private
