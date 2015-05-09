@@ -28,8 +28,18 @@
       <h4>History</h4>
       <div class='history'>
         <% @home_teachee.histories.each do |history| %>
-          <p>Date: <%= history.created_at.strftime("%a, %b %e %Y") %></p>
-          <p>Visit Summary: <%= history.visit_summary %>
+          <% if history.created_at != nil %>
+            <p>Date: <%= history.created_at.strftime("%a, %b %e %Y") %></p>
+            <p>Visit Summary: <%= history.visit_summary %>
+          <% else %>
+            <p>N/A</p>
+          <% end %>
+        <% end %>
+        <%= form_for [@home_teachee, @history] do |h| %>
+          <%= h.label :visit_summary %>
+          <%= h.text_area :visit_summary %>
+          <br/>
+          <%= h.submit 'Create History Item', class: 'btn btn-success' %>
         <% end %>
       </div>
     </div>

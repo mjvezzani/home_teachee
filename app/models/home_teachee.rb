@@ -5,8 +5,7 @@ class HomeTeachee < ActiveRecord::Base
   has_many :histories, :dependent => :destroy
   has_many :issues, :dependent => :destroy
 
-  accepts_nested_attributes_for :contact_info
-  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :contact_info, :address, :histories, :issues
 
   validates :first_name, presence: true
   validates :last_name, presence: true

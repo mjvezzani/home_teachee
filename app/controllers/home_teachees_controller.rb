@@ -7,6 +7,7 @@ class HomeTeacheesController < ApplicationController
   end
 
   def show
+    @history = History.new
   end
 
   def new
@@ -51,7 +52,8 @@ class HomeTeacheesController < ApplicationController
   def home_teachee_params
     params.require(:home_teachee).permit(:first_name, :last_name,
                                          address_attributes: [:street_number, :city, :state, :zipcode],
-                                         contact_info_attributes: [:email, :phone1, :phone2])
+                                         contact_info_attributes: [:email, :phone1, :phone2],
+                                         histories_attributes: [:visit_summary])
   end
 
   def set_home_teachee

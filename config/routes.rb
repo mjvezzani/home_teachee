@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :home_teachees do
     resources :issues, only: [:create]
+    resources :histories, only: [:create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
